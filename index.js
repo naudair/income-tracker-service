@@ -2,6 +2,8 @@ const express = require("express");
 const userRouter = require("./routes/userRouter");
 const cors = require("cors");
 const connect = require("./utils/connectDatabase");
+const { transactionRoute } = require("./routes/transactionRoute");
+
 
 const app = express();
 const port = 8080;
@@ -11,10 +13,7 @@ app.use(cors());
 connect();
 
 app.use(userRouter);
-
-// app.get("/", (req, res) => {
-//   res.send("hello world");
-// });
+app.use(transactionRoute);
 
 app.listen(port, () => {
   console.log(`your backend server is running on ${port}`);
