@@ -14,7 +14,7 @@ const createTransaction = async (req, res) => {
 
 const getTransactions = async (req, res) => {
     try {
-      const response = await transactionModel.find()
+      const response = await transactionModel.find().sort({createdAt: 'desc'})
       res.status(200).send(response);
     } catch (error) {
       res.status(500).send(error);
