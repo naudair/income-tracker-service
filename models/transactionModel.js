@@ -1,14 +1,14 @@
-const { mongoose, Schema } = require("mongoose");
+const { model, Schema } = require("mongoose");
 
 const transactionSchema = new Schema({
   userID: { type: String, require: true },
   category: {
     type: String,
-    enum: ["food", "shopping", "bills", "clothing"],
+    enum: ["Food", "Shopping", "Bills", "Clothing"],
   },
   transactionTitle: String,
   amount: Number,
-  createdAt: { type: Date, default: Date.now() },
+  createdAt: { type: Date, default: Date.now().toString()},
   note: String,
   transactionType: {
     type: String,
@@ -16,6 +16,6 @@ const transactionSchema = new Schema({
   },
 });
 
-const transactionModel = mongoose.model("transaction", transactionSchema);
+const TransactionModel = model("transaction", transactionSchema);
 
-module.exports = transactionModel;
+module.exports = TransactionModel;
