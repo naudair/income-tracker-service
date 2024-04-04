@@ -6,7 +6,7 @@ const transactionRoute = Router();
 transactionRoute.get("/get-transaction", getTransactions);
 transactionRoute.post("/create-transaction", createTransaction);
 transactionRoute.delete("/delete-transaction/:transactionId", deleteTransaction);
-transactionRoute.post("/update-transaction/", updateTransaction);
+transactionRoute.post("/update-transaction", updateTransaction);
 
 
 module.exports = { transactionRoute };

@@ -13,10 +13,10 @@ const createTransaction = async (req, res) => {
 
 const updateTransaction = async (req, res) => {
   const data = req.body;
-  const {id, transaction} = data
+  const {id, ...transaction} = data
   console.log(data)
   try {
-    const response = await TransactionModel.findByIdAndUpdate(id, transaction);
+    const response = await TransactionModel.findByIdAndUpdate(id, transaction, {new:true});
     console.log(response);
     res.status(200).send(response);
   } catch (error) {
