@@ -10,6 +10,6 @@ const UserSchema = new Schema({
   updatedAt: Date,
   CurrencyType: String,
 });
-const userModel = model("users", UserSchema);
+const UserModel = model("users", UserSchema);
 
-module.exports = userModel;
+module.exports = UserModel;
