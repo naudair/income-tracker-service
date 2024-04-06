@@ -1,4 +1,4 @@
-const TransactionModel = require("../models/TransactionModel");
+const TransactionModel = require("../models/transactionModel");
 
 const createTransaction = async (req, res) => {
   const data = req.body;
