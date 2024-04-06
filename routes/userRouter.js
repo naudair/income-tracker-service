@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const UserModel = require("../models/userModel");
+// const UserModel = require("../models/userModel");
 const {signupUser, signinUser} = require('../controllers/userController')
 const userRouter = Router();
 
