@@ -16,12 +16,12 @@ const signupUser = async (req, res) => {
 
 const signinUser = async (req, res) => {
   const email = req.body.email;
-  const password = req.body.password;
+  // const password = req.body.password;
   try {
     const user = await UserModel.findOne({ email: email });
-    const hashedPassword = user.password;
-    const isUser = bcrypt.compareSync(password, hashedPassword);
-    if (isUser) {
+    // const hashedPassword = user.password;
+    // const isUser = bcrypt.compareSync(password, hashedPassword);
+    if (user) {
       res.status(200).send({ message: "amjilttai nevterle" });
     } else {
       res.status(404).send({ message: "User not found" });
