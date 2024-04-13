@@ -27,10 +27,10 @@ const validatePassword = async (req, res, next) => {
     if (isPasswordCorrect) {
       next();
     } else {
-      res.status(404).send("Password is incorrect");
+      res.status(404).send({message: "Password is incorrect"});
     }
   } else {
-    res.status(404).send("user not found");
+    res.status(404).send({message: "user not found"});
   }
 };
 
